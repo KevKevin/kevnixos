@@ -15,7 +15,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.kernelModules = ["vfio-pci"];
-  boot.kernelParams = ["intel_iommu=on" "hugepagesz=1G" "hugepages=24"];
+  
+  # Blocca completamente tutto, attenzione
+  #boot.kernelParams = ["intel_iommu=on" "hugepagesz=1G" "hugepages=24"];
 
   networking.hostName = "nixos"; # Define your hostname.
 
