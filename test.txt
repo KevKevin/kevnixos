@@ -1,0 +1,1 @@
+sudo curl -LO --output-dir /etc/nixos https://raw.githubusercontent.com/KevKevin/kevnixos/refs/heads/main/configuration.nix
