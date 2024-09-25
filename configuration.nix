@@ -101,7 +101,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-
     ];
   };
 
@@ -111,7 +110,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   
-  # Virtualization
+  # Virtualisation
   virtualisation = 
   {
     libvirtd = 
