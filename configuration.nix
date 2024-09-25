@@ -19,24 +19,19 @@
 
   networking.hostName = "nixos"; # Define your hostname.
 
+  # Abilitare il wifi [test]
   #networking.wireless.interfaces = ["wlp2s0"];
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   #networking.wireless.userControlled.enable = true;
-     
-  #networking.wireless.networks."Be Care Srl".pskRaw = "af2a9e89e6d086124b9fdee07e929fa902a248db6ddf7353190033e6ecc66ebf";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager =
   {
    enable = true;
-   #unmanaged = [ "*" "except:type:wwan" "except:type:gsm" ];
+   #unmanaged = [ "*" "except:type:wwan" "except:type:gsm" ]; # Serve per il wifi [test]
   };
   
-  # Enable bluetooth
+  # Enable bluetooth [test]
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   hardware.bluetooth.settings.General.Experimental = true;
@@ -67,6 +62,8 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+
+  # Serve per hyprland ma non funziona
   #programs.hyprland.enable = true;
 
   # Configure keymap in X11
@@ -95,7 +92,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.kevin = {
@@ -104,7 +101,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+
     ];
   };
 
@@ -146,11 +143,9 @@
   # List packages installed in system profile. To search, run: $ nix search wget
   environment.systemPackages = with pkgs; [
   pkgs.git
-  #pkgs.vim
   #pkgs.wget
   pkgs.blueman
   pkgs.alacritty
-  #pkgs.kitty
   pkgs.virt-manager
   pkgs.spice
   pkgs.spice-gtk
