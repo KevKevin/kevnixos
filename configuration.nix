@@ -10,35 +10,37 @@
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
+
+  # Host
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelModules = ["vfio-pci"];
+  #Guest
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "nodev";
+  # boot.loader.grub.useOSProber = true;
+
+  boot.kernelModules = ["vfio-pci" "rtw89"];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   
   # Blocca completamente tutto, attenzione
-  #boot.kernelParams = ["intel_iommu=on" "hugepagesz=1G" "hugepages=24"];
+  # boot.kernelParams = ["intel_iommu=on" "hugepagesz=1G" "hugepages=24"];
 
   networking.hostName = "nixos"; # Define your hostname.
 
   # Abilitare il wifi [test]
-  #networking.wireless.interfaces = ["wlp2s0"];
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  #networking.wireless.userControlled.enable = true;
+  # networking.wireless.interfaces = ["wlp2s0"];
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.userControlled.enable = true;
 
   # Enable networking
   networking.networkmanager =
   {
    enable = true;
-   #unmanaged = [ "*" "except:type:wwan" "except:type:gsm" ]; # Serve per il wifi [test]
+   # unmanaged = [ "*" "except:type:wwan" "except:type:gsm" ]; # Serve per il wifi [test]
   };
   
-  # Enable bluetooth [test]
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-  hardware.bluetooth.settings.General.Experimental = true;
-  services.blueman.enable = true;
-
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 
@@ -62,15 +64,69 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;           #login manager
+  # services.desktopManager.plasma6.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;    #login manager
+  # services.xserver.desktopManager.gnome.enable = true;
 
-  # Serve per hyprland ma non funziona
-  #programs.hyprland.enable = true;
+  # Test hyprland
+  programs.hyprland = {
+    enable = true;
+    # nvidiaPatches = true;
+    xwayland.enable = true;
+    # xwayland.hidpi = true;
+  };
+
+  environment.sessionVariables = {
+    # If your cursor becomes invisible
+    WLR_NO_HARDWARE_CURSORS = "1";
+
+    # Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
+  };
+
+  hardware = {
+    #Opengl
+    opengl.enable = true;
+
+    # Most wayland compositors need this
+    # nvidia.modesetting.enable = true;
+  };
+
+  # Enable bluetooth [test]
+  hardware.bluetooth.enable = true;                         # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true;                    # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.settings.General.Experimental = true;
+  
+  services.blueman.enable = true;
+
+  #Cose di gnome
+  # services.gvfs.enable = true;
+  # services.gnome.gnome-keyring.enable = true;
+
+  #i3
+  #services.xserver.windowManager.i3 = {
+  #  enable = true;
+  #  extraPackages = with pkgs; [
+  #    i3status
+  #  ];
+  #};
+
+  #services.xserver.desktopManager = {
+  #  xterm.enable = false;
+  #  xfce = {
+  #    enable = true;
+  #    noDesktop = true;
+  #    enableXfwm = false;
+  #  };
+  #};
+
+  #services.xserver.displayManager = {
+  #  lightdm.enable = true;
+  #  defaultSession = "xfce+i3";
+  #};
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -94,7 +150,7 @@
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    # media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -137,8 +193,9 @@
     spiceUSBRedirection.enable = true;
   };
 
-  # Serve per il network
-#  services.spice.vdagentd.enable = true;
+  # Serve per abilitare il copia incolla nelle vm linux
+  # services.spice.vdagentd.enable = true;
+  # services.qemuGuest.enable = true;
   
   programs.dconf.enable = true; # virt-manager requires dconf to remember settings
   programs.virt-manager.enable = true;
@@ -148,9 +205,12 @@
   # List packages installed in system profile. To search, run: $ nix search wget
   environment.systemPackages = with pkgs; [
   pkgs.git
-  #pkgs.wget
-  pkgs.blueman
-  pkgs.alacritty
+  pkgs.blueman          #bluetooth
+  pkgs.alacritty        #terminale
+  pkgs.kitty            #terminale default per hyprland
+  pkgs.hyprland
+  pkgs.wayland
+  pkgs.waybar
   pkgs.virt-manager
   pkgs.spice
   pkgs.spice-gtk
@@ -159,7 +219,15 @@
   pkgs.win-virtio
   pkgs.win-spice
   pkgs.swtpm
+  pkgs.wpa_supplicant
   pkgs.google-chrome
+  #pkgs.dmenu                 #dmenu classico testuale in alto
+  #pkgs.gnome.gnome-keyring   #roba gnome / i3
+  pkgs.neofetch
+  pkgs.chromium               # al posto di google chrome?
+  pkgs.eww
+  pkgs.rofi-wayland # da testare
+  pkgs.wofi
   ];
 
   environment.etc = {
@@ -172,27 +240,8 @@
    };
   };  
 
-  #Set the default editor to vim
-  #environment.variables.EDITOR = "vim";
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
