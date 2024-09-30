@@ -1,16 +1,11 @@
-sudo curl -LO --output-dir /etc/nixos https://raw.githubusercontent.com/KevKevin/kevnixos/refs/heads/main/configuration.nix
-
-
-curl -LJO https://github.com/KevKevin/kevnixos/tree/983c2f824400739780800d291ba54616cc9334d3/testcartella
-
-
-svn export https://raw.githubusercontent.com/KevKevin/kevnixos/refs/heads/main
-
-git archive --remote=ssh://git@github.com:KevKevin/kevnixos.git HEAD ~/Desktop | tar -x
-
+# Per clonare il repo
+cd ~/Documents
 git clone https://github.com/KevKevin/kevnixos.git .
 
+# Per copiare il file di configurazione nel posto giusto
 sudo cp ~/Documents/kevnixos/configuration.nix /etc/nixos/configuration.nix
+
+
 
 
 #per la login diversa
