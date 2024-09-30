@@ -10,6 +10,8 @@ git archive --remote=ssh://git@github.com:KevKevin/kevnixos.git HEAD ~/Desktop |
 
 git clone https://github.com/KevKevin/kevnixos.git .
 
+sudo cp ~/Documents/kevnixos/configuration.nix /etc/nixos/configuration.nix
+
 
 #per la login diversa
   services.xserver.displayManager.lightdm.enable = true;

@@ -16,7 +16,7 @@
   # Host
   boot.loader.efi.canTouchEfiVariables = true;
 
-  #Guest
+  # Guest
   # boot.loader.grub.enable = true;
   # boot.loader.grub.device = "nodev";
   # boot.loader.grub.useOSProber = true;
@@ -29,18 +29,25 @@
 
   networking.hostName = "nixos"; # Define your hostname.
 
-  # Abilitare il wifi [test]
-  # networking.wireless.interfaces = ["wlp2s0"];
+  # Abilitare il wifi
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.wireless.userControlled.enable = true;
+  networking.wireless.interfaces = ["wlp2s0"];
+  networking.wireless.userControlled.enable = true;
 
   # Enable networking
   networking.networkmanager =
   {
-   enable = true;
-   # unmanaged = [ "*" "except:type:wwan" "except:type:gsm" ]; # Serve per il wifi [test]
+    enable = true;
+    # unmanaged = [ "*" "except:type:wwan" "except:type:gsm" ]; # Serve per il wifi [test]
   };
   
+  # Enable bluetooth [test]
+  hardware.bluetooth.enable = true;                         # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true;                    # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.settings.General.Experimental = true;
+  
+  services.blueman.enable = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 
@@ -64,14 +71,14 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;           #login manager
+  services.displayManager.sddm.enable = true;           #login manager
   # services.desktopManager.plasma6.enable = true;
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;    #login manager
   # services.xserver.desktopManager.gnome.enable = true;
 
-  # Test hyprland
+  # Hyprland
   programs.hyprland = {
     enable = true;
     # nvidiaPatches = true;
@@ -95,25 +102,17 @@
     # nvidia.modesetting.enable = true;
   };
 
-  # Enable bluetooth [test]
-  hardware.bluetooth.enable = true;                         # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true;                    # powers up the default Bluetooth controller on boot
-  hardware.bluetooth.settings.General.Experimental = true;
-  
-  services.blueman.enable = true;
-
-  #Cose di gnome
+  # Gnome
   # services.gvfs.enable = true;
   # services.gnome.gnome-keyring.enable = true;
 
-  #i3
+  # i3
   #services.xserver.windowManager.i3 = {
   #  enable = true;
   #  extraPackages = with pkgs; [
   #    i3status
   #  ];
   #};
-
   #services.xserver.desktopManager = {
   #  xterm.enable = false;
   #  xfce = {
@@ -122,7 +121,6 @@
   #    enableXfwm = false;
   #  };
   #};
-
   #services.xserver.displayManager = {
   #  lightdm.enable = true;
   #  defaultSession = "xfce+i3";
@@ -199,6 +197,7 @@
   
   programs.dconf.enable = true; # virt-manager requires dconf to remember settings
   programs.virt-manager.enable = true;
+
   # Enable the Flakes feature and the accompanying new nix command-line tool
   # nix.settings.experimental-features = [ "nix-command" "flakes" ]
  
