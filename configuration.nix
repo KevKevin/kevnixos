@@ -210,7 +210,8 @@
   pkgs.hyprland
   pkgs.wayland
   pkgs.waybar
-  pkgs.virt-manager
+  pkgs.kdePackages.dolphin  #file manager
+  pkgs.virt-manager     #virtualizzazione
   pkgs.spice
   pkgs.spice-gtk
   pkgs.spice-protocol
