@@ -77,14 +77,14 @@
   services.udisks2.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;           #login manager
+  #services.displayManager.sddm.enable = true;           #login manager
   # services.desktopManager.plasma6.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;    #login manager
   # services.xserver.desktopManager.gnome.enable = true;
 
-  services.displayManager.sddm.wayland.enable = true;
+  #services.displayManager.sddm.wayland.enable = true;
 
   # Hyprland
   programs.hyprland = {
