@@ -210,6 +210,7 @@
   pkgs.hyprland
   pkgs.wayland
   pkgs.waybar
+  kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
   pkgs.kdePackages.dolphin  #file manager
   pkgs.virt-manager     #virtualizzazione
   pkgs.spice
