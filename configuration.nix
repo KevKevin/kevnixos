@@ -210,7 +210,6 @@
   pkgs.hyprland
   pkgs.wayland
   pkgs.waybar
-  pkgs.nautilus         #file manager (quello di gnome)
   pkgs.virt-manager     #virtualizzazione
   pkgs.spice
   pkgs.spice-gtk
@@ -228,6 +227,7 @@
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
+  pkgs.nemo         #file manager
   ];
 
   environment.etc = {
