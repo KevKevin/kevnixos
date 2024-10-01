@@ -236,6 +236,7 @@
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
+  pkgs.vscode
   ];
 
   environment.etc = {
