@@ -215,6 +215,7 @@
   pkgs.hyprland
   pkgs.wayland
   pkgs.waybar
+  pkgs.hyprpaper
 
   kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
   kdePackages.qtsvg
