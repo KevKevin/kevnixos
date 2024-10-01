@@ -70,8 +70,14 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
+  #login diversa?
+  services.xserver.displayManager.lightdm.enable = true;
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;           #login manager
+  # services.displayManager.sddm.enable = true;           #login manager
   # services.desktopManager.plasma6.enable = true;
 
   # Enable the GNOME Desktop Environment.
@@ -201,9 +207,9 @@
   # List packages installed in system profile. To search, run: $ nix search wget
   environment.systemPackages = with pkgs; [
   pkgs.git
-  pkgs.blueman          #bluetooth
-  pkgs.alacritty        #terminale
-  pkgs.kitty            #terminale default per hyprland
+  pkgs.blueman              #bluetooth
+  pkgs.alacritty            #terminale
+  pkgs.kitty                #terminale default per hyprland
   pkgs.hyprland
   pkgs.wayland
   pkgs.waybar
@@ -212,7 +218,7 @@
   kdePackages.qtsvg
   pkgs.kdePackages.dolphin  #file manager
 
-  pkgs.virt-manager     #virtualizzazione
+  pkgs.virt-manager         #virtualizzazione
   pkgs.spice
   pkgs.spice-gtk
   pkgs.spice-protocol
@@ -225,7 +231,6 @@
   #pkgs.gnome.gnome-keyring   #roba gnome / i3
   pkgs.neofetch
   pkgs.firefox               #browser
-  pkgs.chromium               #browser
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
