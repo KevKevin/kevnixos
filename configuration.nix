@@ -164,9 +164,6 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   
@@ -224,11 +221,11 @@
   pkgs.win-spice
   pkgs.swtpm
   pkgs.wpa_supplicant
-  pkgs.google-chrome
   #pkgs.dmenu                 #dmenu classico testuale in alto
   #pkgs.gnome.gnome-keyring   #roba gnome / i3
   pkgs.neofetch
-  pkgs.chromium               # al posto di google chrome?
+  pkgs.firefox               #browser
+  pkgs.chromium               #browser
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
