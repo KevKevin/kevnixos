@@ -172,6 +172,7 @@
       pkgs.vscode
       pkgs.cmatrix
       pkgs.hollywood
+      pkgs.glances
     ];
   };
 
