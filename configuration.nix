@@ -210,6 +210,11 @@
   pkgs.hyprland
   pkgs.wayland
   pkgs.waybar
+
+  kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
+  kdePackages.qtsvg
+  pkgs.kdePackages.dolphin  #file manager
+
   pkgs.virt-manager     #virtualizzazione
   pkgs.spice
   pkgs.spice-gtk
@@ -227,7 +232,6 @@
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
-  pkgs.nemo         #file manager
   ];
 
   environment.etc = {
