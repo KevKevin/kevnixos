@@ -166,7 +166,7 @@
   users.users.kevin = {
     isNormalUser = true;
     description = "Kevin";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ]; # libvirtd serve per la connessione di qemu/kvm
     packages = with pkgs; [
       kdePackages.kate
     ];

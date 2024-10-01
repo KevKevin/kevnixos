@@ -7,6 +7,8 @@ sudo cp ~/Documents/kevnixos/configuration.nix /etc/nixos/configuration.nix
 
 
 
+34 bona
+
 
 #display manager diverso (console)
   pkgs.ly
