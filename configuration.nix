@@ -166,7 +166,7 @@
   users.users.kevin = {
     isNormalUser = true;
     description = "Kevin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirt" ];
     packages = with pkgs; [
       kdePackages.kate
     ];
