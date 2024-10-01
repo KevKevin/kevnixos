@@ -238,6 +238,8 @@
   pkgs.rofi-wayland # da testare
   pkgs.wofi
   pkgs.vscode
+  pkgs.cmatrix
+  pkgs.hollywood
   ];
 
   environment.etc = {
