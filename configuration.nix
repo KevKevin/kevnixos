@@ -168,7 +168,10 @@
     description = "Kevin";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ]; # libvirtd serve per la connessione di qemu/kvm
     packages = with pkgs; [
-      kdePackages.kate
+      pkgs.neofetch
+      pkgs.vscode
+      pkgs.cmatrix
+      pkgs.hollywood
     ];
   };
 
@@ -216,11 +219,9 @@
   pkgs.wayland
   pkgs.waybar
   pkgs.hyprpaper
-
   kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
   kdePackages.qtsvg
   pkgs.kdePackages.dolphin  #file manager
-
   pkgs.virt-manager         #virtualizzazione
   pkgs.spice
   pkgs.spice-gtk
@@ -232,14 +233,10 @@
   pkgs.wpa_supplicant
   #pkgs.dmenu                 #dmenu classico testuale in alto
   #pkgs.gnome.gnome-keyring   #roba gnome / i3
-  pkgs.neofetch
   pkgs.firefox               #browser
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
-  pkgs.vscode
-  pkgs.cmatrix
-  pkgs.hollywood
   ];
 
   environment.etc = {
