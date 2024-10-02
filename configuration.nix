@@ -26,7 +26,7 @@
   boot.kernelModules = ["vfio-pci" "rtw89"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.kernelParams = [ "transparent_hugepage=never" ];
+  # boot.kernelParams = [ "transparent_hugepage=never" ];
   
   # Blocca completamente tutto, attenzione
   # boot.kernelParams = ["intel_iommu=on" "hugepagesz=1G" "hugepages=24"];
@@ -82,7 +82,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;           #login manager
-   services.desktopManager.plasma6.enable = true;
+  #  services.desktopManager.plasma6.enable = true;
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;    #login manager
@@ -91,12 +91,12 @@
   #services.displayManager.sddm.wayland.enable = true;
 
   # Hyprland
-  #programs.hyprland = {
-  #  enable = true;
-  #  # nvidiaPatches = true;
-  #  xwayland.enable = true;
-  #  # xwayland.hidpi = true;
-  #};
+  programs.hyprland = {
+   enable = true;
+   # nvidiaPatches = true;
+   xwayland.enable = true;
+   # xwayland.hidpi = true;
+  };
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
@@ -186,21 +186,21 @@
   # Virtualisation
   virtualisation = 
   {
-    #libvirtd = 
-    #{
-    # enable = true;
-    # onShutdown = "suspend";
-    # onBoot = "ignore";
-    # qemu = 
-    # {
-    #   package = pkgs.qemu_kvm;
-    #   ovmf.enable = true;
-    #   ovmf.packages = [ pkgs.OVMFFull.fd ];
-    #   swtpm.enable = true;
-    #   runAsRoot = false;
-    # };
-    #};
-    vmware.host.enable = true;
+    libvirtd = 
+    {
+    enable = true;
+    onShutdown = "suspend";
+    onBoot = "ignore";
+    qemu = 
+    {
+      package = pkgs.qemu_kvm;
+      ovmf.enable = true;
+      ovmf.packages = [ pkgs.OVMFFull.fd ];
+      swtpm.enable = true;
+      runAsRoot = false;
+    };
+    };
+    # vmware.host.enable = true;
     # Serve per il network
     spiceUSBRedirection.enable = true;
   };
@@ -226,14 +226,14 @@
   pkgs.blueman              #bluetooth
   pkgs.alacritty            #terminale
   pkgs.kitty                #terminale default per hyprland
-  #pkgs.hyprland
-  #pkgs.wayland
-  #pkgs.waybar
-  #pkgs.hyprpaper
-  #kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
+  pkgs.hyprland
+  pkgs.wayland
+  pkgs.waybar
+  pkgs.hyprpaper
+  kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
   kdePackages.qtsvg
   pkgs.kdePackages.dolphin  #file manager
-  #pkgs.virt-manager         #virtualizzazione
+  pkgs.virt-manager         #virtualizzazione
   pkgs.spice
   pkgs.spice-gtk
   pkgs.spice-protocol
@@ -248,7 +248,7 @@
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
-  pkgs.vmware-workstation
+  # pkgs.vmware-workstation
   pkgs.gparted
   ];
 
@@ -260,7 +260,7 @@
    "ovmf/edk2-i386-vars.fd" = {
      source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-i386-vars.fd";
    };
-  };  
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
