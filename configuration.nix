@@ -240,6 +240,7 @@
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
+  pkgs.vmware-workstation
   ];
 
   environment.etc = {
