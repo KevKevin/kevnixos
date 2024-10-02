@@ -25,6 +25,8 @@
 
   boot.kernelModules = ["vfio-pci" "rtw89"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  boot.kernelParams = [ "transparent_hugepage=never" ];
   
   # Blocca completamente tutto, attenzione
   # boot.kernelParams = ["intel_iommu=on" "hugepagesz=1G" "hugepages=24"];
@@ -198,6 +200,7 @@
     #   runAsRoot = false;
     # };
     #};
+    vmware.host.enable = true;
     # Serve per il network
     spiceUSBRedirection.enable = true;
   };
