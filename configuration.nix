@@ -200,6 +200,7 @@
     };
     # Serve per il network
     spiceUSBRedirection.enable = true;
+    vmware.host.enable = true;
   };
 
   # Serve per abilitare il copia incolla nelle vm linux
