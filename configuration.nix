@@ -204,6 +204,9 @@
   
   virtualisation.vmware.host.enable = true;
 
+  # VMware conflicts with KVM.
+  boot.blacklistedKernelModules = [ "kvm" "kvmgt" "kvm_intel" "kvm_amd" ];
+
   # Serve per abilitare il copia incolla nelle vm linux
   # services.spice.vdagentd.enable = true;
   # services.qemuGuest.enable = true;
