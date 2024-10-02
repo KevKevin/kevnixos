@@ -241,6 +241,7 @@
   pkgs.rofi-wayland # da testare
   pkgs.wofi
   pkgs.vmware-workstation
+  pkgs.gparted
   ];
 
   environment.etc = {
