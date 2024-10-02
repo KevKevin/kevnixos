@@ -202,7 +202,7 @@
     spiceUSBRedirection.enable = true;
   };
   
-  virtualisation.vmware.host.enable = true;
+  #virtualisation.vmware.host.enable = true;
 
   # VMware conflicts with KVM.
   # boot.blacklistedKernelModules = [ "kvm" "kvmgt" "kvm_intel" "kvm_amd" ];
