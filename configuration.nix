@@ -223,11 +223,11 @@
   pkgs.blueman              #bluetooth
   pkgs.alacritty            #terminale
   pkgs.kitty                #terminale default per hyprland
-  pkgs.hyprland
-  pkgs.wayland
-  pkgs.waybar
-  pkgs.hyprpaper
-  kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
+  #pkgs.hyprland
+  #pkgs.wayland
+  #pkgs.waybar
+  #pkgs.hyprpaper
+  #kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
   kdePackages.qtsvg
   pkgs.kdePackages.dolphin  #file manager
   #pkgs.virt-manager         #virtualizzazione
