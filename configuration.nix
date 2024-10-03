@@ -177,6 +177,7 @@
       pkgs.cmatrix
       pkgs.hollywood
       pkgs.glances
+      pkgs.gparted
     ];
   };
 
@@ -224,15 +225,20 @@
   environment.systemPackages = with pkgs; [
   pkgs.git
   pkgs.blueman              #bluetooth
-  pkgs.alacritty            #terminale
-  pkgs.kitty                #terminale default per hyprland
+  pkgs.kitty                #terminale
+  
+  # Hypr cose
   pkgs.hyprland
   pkgs.wayland
   pkgs.waybar
   pkgs.hyprpaper
+  
+  # Prima o poi da sostituire con un file manager a modo 
   kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
   kdePackages.qtsvg
   pkgs.kdePackages.dolphin  #file manager
+  
+  # Virtualizzazione
   pkgs.virt-manager         #virtualizzazione
   pkgs.spice
   pkgs.spice-gtk
@@ -241,15 +247,15 @@
   pkgs.win-virtio
   pkgs.win-spice
   pkgs.swtpm
-  pkgs.wpa_supplicant
-  #pkgs.dmenu                 #dmenu classico testuale in alto
+
+  pkgs.wpa_supplicant         #rete
   #pkgs.gnome.gnome-keyring   #roba gnome / i3
-  pkgs.firefox               #browser
+  pkgs.firefox                #browser
+  
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
   # pkgs.vmware-workstation
-  pkgs.gparted
   ];
 
   environment.etc = {
