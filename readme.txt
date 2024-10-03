@@ -17,6 +17,10 @@ sudo nixos-rebuild list-generations
 # Elimina le generazioni piu vecchie di 15 giorni
 sudo nix-collect-garbage --delete-older-than 15d
 
+# Per disabilitare lo schermo del laptop
+hyprctl keyword monitor "eDP-1, disable"
+
+
 34 bona
 
 
