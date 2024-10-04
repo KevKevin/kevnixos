@@ -21,8 +21,5 @@ sudo nix-collect-garbage --delete-older-than 15d
 hyprctl keyword monitor "eDP-1, disable"
 
 
-34 bona
-
-
 #display manager diverso (console)
   pkgs.ly

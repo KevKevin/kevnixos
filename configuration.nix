@@ -189,17 +189,17 @@
   {
     libvirtd = 
     {
-    enable = true;
-    onShutdown = "suspend";
-    onBoot = "ignore";
-    qemu = 
-    {
-      package = pkgs.qemu_kvm;
-      ovmf.enable = true;
-      ovmf.packages = [ pkgs.OVMFFull.fd ];
-      swtpm.enable = true;
-      runAsRoot = false;
-    };
+      enable = true;
+      onShutdown = "suspend";
+      onBoot = "ignore";
+      qemu = 
+      {
+        package = pkgs.qemu_kvm;
+        ovmf.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+        swtpm.enable = true;
+        runAsRoot = false;
+      };
     };
     # vmware.host.enable = true;
     # Serve per il network
