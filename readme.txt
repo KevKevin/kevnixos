@@ -23,3 +23,5 @@ hyprctl keyword monitor "eDP-1, disable"
 
 #display manager diverso (console)
   pkgs.ly
+
+# Nelle vm windows il driver per il virtual network interface dev'essere e1000e, non VirtIo, perche' ancora non ha tirato su i driver
