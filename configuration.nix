@@ -247,6 +247,7 @@
   pkgs.win-virtio
   pkgs.win-spice
   pkgs.swtpm
+  pkgs.virtiofsd
 
   pkgs.wpa_supplicant         #rete
   #pkgs.gnome.gnome-keyring   #roba gnome / i3
