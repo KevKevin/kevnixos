@@ -26,4 +26,12 @@ echo - Copio la configurazione di Waybar: config.jsonc
 sudo cp ~/Documents/kevnixos/config.jsonc ~/.config/waybar/config.jsonc
 
 echo
+echo - Creo cartella per i3
+mkdir -p ~/.config/i3
+
+echo
+echo - Copio la configurazione di i3: config
+sudo cp ~/Documents/kevnixos/config.conf ~/.config/i3/config
+
+echo
 echo Reset completato!
