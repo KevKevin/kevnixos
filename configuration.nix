@@ -258,6 +258,7 @@
   pkgs.rofi-wayland # da testare
   pkgs.wofi
   # pkgs.vmware-workstation
+  pkgs.feh                    # background
   ];
 
   environment.etc = {
