@@ -25,3 +25,7 @@ hyprctl keyword monitor "eDP-1, disable"
   pkgs.ly
 
 # Nelle vm windows il driver per il virtual network interface dev'essere e1000e, non VirtIo, perche' ancora non ha tirato su i driver
+
+
+# Per condividere una cartella su una vm (windows?) dopo aver aggiunto il FileSystem, aggiungere 
+'<binary path="/run/current-system/sw/bin/virtiofsd"/>' nell' xml + avere nella configuration.nix virtiofsd
