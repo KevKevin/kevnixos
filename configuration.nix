@@ -263,8 +263,8 @@
   pkgs.google-chrome
   
   pkgs.eww
-  pkgs.rofi-wayland # da testare
-  pkgs.wofi
+  pkgs.rofi
+  # pkgs.wofi                 # solo con wayland
   pkgs.feh                    # background
 
   # pkgs.bumblebee-status     # fatto direttamente il git clone, senza il pkgs
