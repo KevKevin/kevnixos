@@ -1,5 +1,8 @@
+echo - Aggiorno dal repository remoto
+echo
 git pull
 
+echo
 echo - Creo cartella per la configurazione nix
 mkdir -p /etc/nixos
 
