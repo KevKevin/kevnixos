@@ -267,7 +267,7 @@
   pkgs.wofi
   pkgs.feh                    # background
 
-  pkgs.bumblebee-status
+  # pkgs.bumblebee-status     # fatto direttamente il git clone, senza il pkgs
   ];
 
   environment.etc = {
