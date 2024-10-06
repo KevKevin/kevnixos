@@ -267,6 +267,7 @@
   # pkgs.wofi                 # solo con wayland
   pkgs.feh                    # background
 
+  pkgs.i3status
   # pkgs.bumblebee-status     # fatto direttamente il git clone, senza il pkgs
   ];
 
