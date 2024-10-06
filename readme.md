@@ -1,11 +1,11 @@
 ## Utility generali / informazioni utili
 
 # Per clonare il repo
-cd ~/Documents
+cd ~
 git clone https://github.com/KevKevin/kevnixos.git
 
 # Per copiare il file di configurazione nel posto giusto
-sudo cp ~/Documents/kevnixos/configuration.nix /etc/nixos/configuration.nix
+sudo cp ~/kevnixos/configuration.nix /etc/nixos/configuration.nix
 
 # Per comprimere un file
 sudo tar cfz big.tgz nomefile.estensione
