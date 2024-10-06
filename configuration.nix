@@ -115,8 +115,8 @@
   };
 
   # Gnome
-  # services.gvfs.enable = true;
-  # services.gnome.gnome-keyring.enable = true;
+  services.gvfs.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # i3
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
@@ -133,7 +133,7 @@
   services.displayManager = {
    lightdm.enable = true;
    defaultSession = "xfce+i3";
-  #  defaultSession = "none+i3";
+    # defaultSession = "none+i3";
   };
 
   services.xserver.windowManager.i3 = {
