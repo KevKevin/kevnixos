@@ -37,11 +37,11 @@ sudo cp ~/Documents/kevnixos/i3config.conf ~/.config/i3/config
 
 echo
 echo - Creo cartella per i3status
-mkdir -p ~/.config/i3status
+mkdir -p ~/.i3
 
 echo
 echo - Copio la configurazione di i3status: config
-sudo cp ~/Documents/kevnixos/i3statusconfig.conf ~/.config/i3status/config
+sudo cp ~/Documents/kevnixos/i3statusconfig.conf ~/.i3/i3status.conf
 
 echo
 echo Reset completato!
