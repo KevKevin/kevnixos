@@ -233,7 +233,8 @@
   pkgs.kitty                #terminale
   
   # i3
-  pkgs.bumblebee-status
+  pkgs.dmenu
+  # pkgs.bumblebee-status
 
   # Hypr cose
   pkgs.hyprland
