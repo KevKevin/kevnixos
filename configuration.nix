@@ -123,24 +123,24 @@
   
   services.xserver.desktopManager = {
    xterm.enable = false;
-  #  xfce = {
-  #    enable = true;
-  #    noDesktop = true;
-  #    enableXfwm = false;
-  #  };
+   xfce = {
+     enable = true;
+     noDesktop = true;
+     enableXfwm = false;
+   };
   };
 
   services.displayManager = {
-  #  lightdm.enable = true;
-  #  defaultSession = "xfce+i3";
-   defaultSession = "none+i3";
+   lightdm.enable = true;
+   defaultSession = "xfce+i3";
+  #  defaultSession = "none+i3";
   };
 
   services.xserver.windowManager.i3 = {
    enable = true;
-  #  extraPackages = with pkgs; [
-  #    i3status
-  #  ];
+   extraPackages = with pkgs; [
+     i3status
+   ];
   };
 
   # Configure keymap in X11
@@ -235,7 +235,7 @@
   # i3
   pkgs.dmenu
   pkgs.bumblebee-status
-  (bumblebee-status.override{plugins = p:[p.cpu];})
+  # (bumblebee-status.override{plugins = p:[p.cpu];})
 
   # Hypr cose
   pkgs.hyprland
@@ -269,7 +269,6 @@
   # pkgs.wofi                 # solo con wayland
   pkgs.feh                    # background
 
-  pkgs.i3status
   # pkgs.bumblebee-status     # fatto direttamente il git clone, senza il pkgs
   ];
 
