@@ -74,29 +74,29 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
-  #login diversa?
-  #services.xserver.displayManager.lightdm.enable = true;
-  services.devmon.enable = true;
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
+  # login diversa?
+  # services.xserver.displayManager.lightdm.enable = true;
+  # services.devmon.enable = true;
+  # services.gvfs.enable = true;
+  # services.udisks2.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;           #login manager
-  #  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;           #login manager
+  # services.desktopManager.plasma6.enable = true;
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;    #login manager
   # services.xserver.desktopManager.gnome.enable = true;
 
-  #services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
 
   # Hyprland
-  programs.hyprland = {
-   enable = true;
-   # nvidiaPatches = true;
-   xwayland.enable = true;
-   # xwayland.hidpi = true;
-  };
+  # programs.hyprland = {
+  #  enable = true;
+  #  # nvidiaPatches = true;
+  #  xwayland.enable = true;
+  #  # xwayland.hidpi = true;
+  # };
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
@@ -119,24 +119,29 @@
   # services.gnome.gnome-keyring.enable = true;
 
   # i3
-  #services.xserver.windowManager.i3 = {
-  #  enable = true;
-  #  extraPackages = with pkgs; [
-  #    i3status
-  #  ];
-  #};
-  #services.xserver.desktopManager = {
-  #  xterm.enable = false;
+  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
+  
+  services.xserver.desktopManager = {
+   xterm.enable = false;
   #  xfce = {
   #    enable = true;
   #    noDesktop = true;
   #    enableXfwm = false;
   #  };
-  #};
-  #services.xserver.displayManager = {
+  };
+
+  services.xserver.displayManager = {
   #  lightdm.enable = true;
   #  defaultSession = "xfce+i3";
-  #};
+   defaultSession = "none+i3";
+  };
+
+  services.xserver.windowManager.i3 = {
+   enable = true;
+  #  extraPackages = with pkgs; [
+  #    i3status
+  #  ];
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -227,6 +232,9 @@
   pkgs.blueman              #bluetooth
   pkgs.kitty                #terminale
   
+  # i3
+  pkgs.bumblebee-status
+
   # Hypr cose
   pkgs.hyprland
   pkgs.wayland
@@ -239,7 +247,7 @@
   pkgs.kdePackages.dolphin  #file manager
   
   # Virtualizzazione
-  pkgs.virt-manager         #virtualizzazione
+  pkgs.virt-manager         
   pkgs.spice
   pkgs.spice-gtk
   pkgs.spice-protocol
@@ -257,8 +265,9 @@
   pkgs.eww
   pkgs.rofi-wayland # da testare
   pkgs.wofi
-  # pkgs.vmware-workstation
   pkgs.feh                    # background
+
+  pkgs.bumblebee-status
   ];
 
   environment.etc = {

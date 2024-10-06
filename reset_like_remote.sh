@@ -33,13 +33,13 @@ echo
 echo - Copio la configurazione di i3: config
 sudo cp ~/Documents/kevnixos/i3config.conf ~/.config/i3/config
 
-echo
-echo - Creo cartella per i3status
-mkdir -p ~/.config/i3status
+#echo
+#echo - Creo cartella per i3status
+#mkdir -p ~/.config/i3status
 
-echo
-echo - Copio la configurazione di i3status: config
-sudo cp ~/Documents/kevnixos/i3statusconfig.conf ~/.config/i3status/config
+#echo
+#echo - Copio la configurazione di i3status: config
+#sudo cp ~/Documents/kevnixos/i3statusconfig.conf ~/.config/i3status/config
 
 echo
 echo Reset completato!

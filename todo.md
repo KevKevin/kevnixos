@@ -20,3 +20,11 @@ pkgs.powerline-go
 # dividere in sottocartelle gli scripts
 
 # spostare il git clone sulla radice della ~ almeno è più facile da ritrovare per usarlo
+
+# provare https://github.com/nwg-piotr/autotiling su i3
+
+# provare https://github.com/jonaburg/picom su i3 
+
+# aggiungere gaps ai bordi i3 così
+gaps inmer 15
+gaps outer 15
