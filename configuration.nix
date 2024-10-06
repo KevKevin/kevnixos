@@ -234,6 +234,7 @@
   
   # i3
   pkgs.dmenu
+  pkgs.bumblebee-status
   (bumblebee-status.override{plugins = p:[p.cpu];})
 
   # Hypr cose
