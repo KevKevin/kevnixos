@@ -123,17 +123,17 @@
   
   services.xserver.desktopManager = {
    xterm.enable = false;
-   xfce = {
-     enable = true;
-     noDesktop = true;
-     enableXfwm = false;
-   };
+  #  xfce = {
+  #    enable = true;
+  #    noDesktop = true;
+  #    enableXfwm = false;
+  #  };
   };
 
-  services.xserver.displayManager = {
-   lightdm.enable = true;
-   defaultSession = "xfce+i3";
-    # defaultSession = "none+i3";
+  services.displayManager = {
+  #  lightdm.enable = true;
+  #  defaultSession = "xfce+i3";
+    defaultSession = "none+i3";
   };
 
   services.xserver.windowManager.i3 = {
