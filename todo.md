@@ -1,3 +1,9 @@
+
+# provare la vm windows su plasma / gnome per capire se è meglio per gli shortcut
+
+# implementare powerline-go
+pkgs.powerline-go
+
 # trovare una status bar migliore di quella default (bumblebee-status sarebbe ottima ma non funziona)
 {
     pkgs.bumblebee-status
@@ -8,11 +14,10 @@
     -t moonlight-powerline
 }
 
-# implementare powerline-go
-pkgs.powerline-go
-
 # dividere in sottocartelle gli scripts
 
 # provare https://github.com/nwg-piotr/autotiling su i3
 
 # provare https://github.com/jonaburg/picom su i3 
+
+
