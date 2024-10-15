@@ -16,12 +16,12 @@
   boot.loader.systemd-boot.enable = true;
 
   # Host
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
   # Guest
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.device = "nodev";
-  # boot.loader.grub.useOSProber = true;
+  boot.loader.grub.enable = true; # bootloader default gnome
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.useOSProber = true; #bootloader default gnome
 
   boot.kernelModules = ["vfio-pci" "rtw89"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -85,8 +85,8 @@
   # services.desktopManager.plasma6.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;    #login manager
-  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.enable = true;    #login manager
+  services.xserver.desktopManager.gnome.enable = true;
 
   # services.displayManager.sddm.wayland.enable = true;
 
@@ -119,29 +119,29 @@
   services.gnome.gnome-keyring.enable = true;
 
   # i3
-  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
+  # environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
   
-  services.xserver.desktopManager = {
-   xterm.enable = false;
-  #  xfce = {
-  #    enable = true;
-  #    noDesktop = true;
-  #    enableXfwm = false;
-  #  };
-  };
+  # services.xserver.desktopManager = {
+  #  xterm.enable = false;
+  # #  xfce = {
+  # #    enable = true;
+  # #    noDesktop = true;
+  # #    enableXfwm = false;
+  # #  };
+  # };
 
-  services.displayManager = {
-  #  lightdm.enable = true;
-  #  defaultSession = "xfce+i3";
-    defaultSession = "none+i3";
-  };
+  # services.displayManager = {
+  # #  lightdm.enable = true;
+  # #  defaultSession = "xfce+i3";
+  #   defaultSession = "none+i3";
+  # };
 
-  services.xserver.windowManager.i3 = {
-   enable = true;
-   extraPackages = with pkgs; [
-     i3status
-   ];
-  };
+  # services.xserver.windowManager.i3 = {
+  #  enable = true;
+  #  extraPackages = with pkgs; [
+  #    i3status
+  #  ];
+  # };
 
   # Configure keymap in X11
   services.xserver.xkb = {
