@@ -233,20 +233,20 @@
   pkgs.kitty                #terminale
   
   # i3
-  pkgs.dmenu
-  pkgs.bumblebee-status
+  # pkgs.dmenu
+  # pkgs.bumblebee-status
   # (bumblebee-status.override{plugins = p:[p.cpu];})
 
   # Hypr cose
-  pkgs.hyprland
-  pkgs.wayland
-  pkgs.waybar
-  pkgs.hyprpaper
+  # pkgs.hyprland
+  # pkgs.wayland
+  # pkgs.waybar
+  # pkgs.hyprpaper
   
   # Prima o poi da sostituire con un file manager a modo 
-  kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
-  kdePackages.qtsvg
-  pkgs.kdePackages.dolphin  #file manager
+  # kdePackages.qtwayland     #serve per far funzionare kdepackages su wayland
+  # kdePackages.qtsvg
+  # pkgs.kdePackages.dolphin  #file manager
   
   # Virtualizzazione
   pkgs.virt-manager         
@@ -262,7 +262,7 @@
   pkgs.wpa_supplicant         #rete
   #pkgs.gnome.gnome-keyring   #roba gnome / i3
   pkgs.firefox                #browser
-  pkgs.google-chrome
+  # pkgs.google-chrome
   
   pkgs.eww
   pkgs.rofi
