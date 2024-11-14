@@ -262,7 +262,7 @@
   pkgs.wpa_supplicant         #rete
   #pkgs.gnome.gnome-keyring   #roba gnome / i3
   pkgs.firefox                #browser
-  # pkgs.google-chrome
+  pkgs.google-chrome
   
   pkgs.eww
   pkgs.rofi
