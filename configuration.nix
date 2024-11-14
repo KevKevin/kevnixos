@@ -272,6 +272,7 @@
   # pkgs.bumblebee-status     # fatto direttamente il git clone, senza il pkgs
 
   pkgs.powerline-go
+  pkgs.unzip
   ];
 
   environment.etc = {
