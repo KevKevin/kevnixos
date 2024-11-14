@@ -249,15 +249,15 @@
   # pkgs.kdePackages.dolphin  #file manager
   
   # Virtualizzazione
-  pkgs.virt-manager         
-  pkgs.spice
-  pkgs.spice-gtk
-  pkgs.spice-protocol
-  pkgs.spice-vdagent
-  pkgs.win-virtio
-  pkgs.win-spice
-  pkgs.swtpm
-  pkgs.virtiofsd
+  # pkgs.virt-manager         
+  # pkgs.spice
+  # pkgs.spice-gtk
+  # pkgs.spice-protocol
+  # pkgs.spice-vdagent
+  # pkgs.win-virtio
+  # pkgs.win-spice
+  # pkgs.swtpm
+  # pkgs.virtiofsd
 
   pkgs.wpa_supplicant         #rete
   #pkgs.gnome.gnome-keyring   #roba gnome / i3
